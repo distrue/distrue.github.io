@@ -1,4 +1,573 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Distrue's blog]]></title><description><![CDATA[기술 블로그 by distrue]]></description><link>https://lumen.netlify.com</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 12 Jan 2021 14:38:01 GMT</lastBuildDate><item><title><![CDATA[토이 프로젝트의 DB 선택(RDB, DocumentDB)]]></title><description><![CDATA[RDB는 관계형 데이터 모델에 기초를 둔 데이터베이스이다. 관계형 데이터 모델은 모든 데이터를 2차원 형태의 테이블로 표현해 처리한다. 각 표현개체에 따라 데이터 간의 상관관계에서 개체간의 관계를 표현한 것이다. 각 Table을 schema를 통해 정의하고, SQL 질의문을 통해 데이터를 처리한다.]]></description><link>https://lumen.netlify.com/posts/toy-project-databse</link><guid isPermaLink="false">https://lumen.netlify.com/posts/toy-project-databse</guid><pubDate>Fri, 17 Jul 2020 22:00:37 GMT</pubDate><content:encoded>&lt;p&gt;RDB는 관계형 데이터 모델에 기초를 둔 데이터베이스이다. 관계형 데이터 모델은 모든 데이터를 2차원 형태의 테이블로 표현해 처리한다. 각 표현개체에 따라 데이터 간의 상관관계에서 개체간의 관계를 표현한 것이다. 각 Table을 schema를 통해 정의하고, SQL 질의문을 통해 데이터를 처리한다.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Distrue's blog]]></title><description><![CDATA[기술 블로그 by distrue]]></description><link>https://lumen.netlify.com</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 17 Mar 2021 12:28:38 GMT</lastBuildDate><item><title><![CDATA[스누푸파 카카오채널 (2) AWS Lambda로 응답 API 구축]]></title><description><![CDATA[스누푸파 카카오 채널 리뉴얼! AWS Lambda로 응답 API를 구축했습니다.]]></description><link>https://lumen.netlify.com/posts/snuff_channel_2</link><guid isPermaLink="false">https://lumen.netlify.com/posts/snuff_channel_2</guid><pubDate>Wed, 17 Mar 2021 22:00:37 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 898px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/9713c965471479a07478efa31f304c88/84cc5/210317.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 66.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAACk0lEQVQ4y41S+09SYRg+f1PX5TXNu5ZZzVWbW7e5WvpD9ou6mtWEUDTwwmSZlY6pkUwdRi7zcrIt8QIkRUAZRIDjqgiIQPB0zocy3dL1bs++d9/7fM/7vO85VDwex36xu7aTx7bPDX8IdscaVp3rezgUm4TDYUSjUQKn0wmPx4NIJEIILGKxWBJs6FdW8WxgFvrvdoxNaPBKvpCsUX6/HzRNQy6XQyaTQSgUQiwWw2Qy/dM160wyPIdF9U/Qs3qo1Ga8ndbig9KQEPT5fERQqVRCp9PBYrHAYDBArVbD5XLB6/VCq9WSWjwWhdHkwOuxBTgcPlhtXvyyuLGkMWFIsZQQdLnc6O3thVQqRX9/P8bHx0kDLpcLgUAAjUYDDoeDurp62G1WeH0hPJXMYH5hBQPSebyf0kE2tgjF9HJCcPc4gWAQweAms48442yNcfub5EHm3mazYWsrTHj0nAGdzycxMfMVIwoVRC+n4FkPJASNPxxwODewGYrgf+LP9vIXl82YnTdi5pMBbq8/8QcwNSozvxUlF0S4dKUHldUS1D8YQZtoiowzOf0Nn7VWmMwuuD3+5Jc8KKj03BakZDfjeGYTjqQ9xuFULsEhFilcHE3nIbtIgNLyLly+2oOqmkE84r1BVzcN2agK9Ecjlr9YYbOvIRDYApWR14pMFozTkwVP9oC9KzrXifwz7cg73YaCsx1Iy+GT5ieymokRwiljOKXtKK/oTgjuB/ZBZZWEuKqpHcK9h6OouPECtfeHCeoaRtDYpMD1W304lsEjTQ4UZNeRVSggrqoZUb7wHW7fGUA9I3TtZh8aGuWovjvIOOYlJ6IOEts5U0/xUXxehLKLYjJaYVkHckvaUMysg83TclqS7/4CkDYkSQQx1YEAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+        &lt;source
+          srcset=&quot;/static/9713c965471479a07478efa31f304c88/8ac56/210317.webp 240w,
+/static/9713c965471479a07478efa31f304c88/d3be9/210317.webp 480w,
+/static/9713c965471479a07478efa31f304c88/005c4/210317.webp 898w&quot;
+          sizes=&quot;(max-width: 898px) 100vw, 898px&quot;
+          type=&quot;image/webp&quot;
+        /&gt;
+        &lt;source
+          srcset=&quot;/static/9713c965471479a07478efa31f304c88/8ff5a/210317.png 240w,
+/static/9713c965471479a07478efa31f304c88/e85cb/210317.png 480w,
+/static/9713c965471479a07478efa31f304c88/84cc5/210317.png 898w&quot;
+          sizes=&quot;(max-width: 898px) 100vw, 898px&quot;
+          type=&quot;image/png&quot;
+        /&gt;
+        &lt;img
+          class=&quot;gatsby-resp-image-image&quot;
+          src=&quot;/static/9713c965471479a07478efa31f304c88/84cc5/210317.png&quot;
+          alt=&quot;img&quot;
+          title=&quot;img&quot;
+          loading=&quot;lazy&quot;
+          style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        /&gt;
+      &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;지난 번 &lt;a href=&quot;http://localhost:8000/posts/snuff_channel_1&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;post&lt;/a&gt; 에서 크롤링한 데이터를 mongoDB에 저장해둔 후, 이를 스누푸파 카카오채널에서 응답할 수 있도록 AWS Lambda를 이용해 채널을 개발하였다.&lt;/p&gt;
+&lt;p&gt;카카오채널의 스킬 응답을 구성하기 위해서는 &lt;a href=&quot;https://github.com/distrue/openbuilder-node&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;openbuilder-node&lt;/a&gt; 라이브러리를 활용하였다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;이 라이브러리는 직접 제작한 라이브러리로 지금은 &lt;code class=&quot;language-text&quot;&gt;v.0.3&lt;/code&gt; 인데, 일반적으로 활용되는 카카오채널의 스킬 응답 / 요청 / 검증 API를 객체화해 사용할 수 있도록 구축해 두었다. 사용해보고 마음에 들면 🌟 한번…ㅎㅎ&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;1-카카오채널-개설과-스킬-등록&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-%EC%B9%B4%EC%B9%B4%EC%98%A4%EC%B1%84%EB%84%90-%EA%B0%9C%EC%84%A4%EA%B3%BC-%EC%8A%A4%ED%82%AC-%EB%93%B1%EB%A1%9D&quot; aria-label=&quot;1 카카오채널 개설과 스킬 등록 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. 카카오채널 개설과 스킬 등록&lt;/h1&gt;
+&lt;p&gt;먼저 카카오채널에 스킬을 정의하고, 카카오채널의 메인에서 접근할 수 있도록 메뉴를 설정해주었다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 960px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/a4b99444e5188c2a8979c6ca4c04a70e/9e818/skill.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 49.16666666666667%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABXUlEQVQoz42R207CQBCGeyMXQgIEjBGjhkfQF/BFOVMUnkkjh+Cltmy72+3xd2bbElQS2OTL7M7u/P2nYz09PqPRuEelcoVa7RbVaoe4OYjHqdfv0Gw+oNXqot3uonrZQeXiGlavN8VoZGM8foVtLzAcvhAzc55M5phMF/s45X0RR+M5+v1ZnqP7Xt/GYGDDwp+VZjhrJcSxp5bjenBcHxx3wkcYhkhJNU1TQ5KklIugdYgg0Hu01hCexGE9Y3l+AEZ4ih5G2G4/8fb+gdVqg+VyjdV6Q/cSvs/3JKojE8MohlTa1JUazC9BpUI4zg5f3w59TcDdCdq78KWCIPcswGKK8GVwWlBKbVqMYyYxrbMjRYURnTW1HpEzxiPHpwXZgWZCIxDFeXFc7k3M4Rwb+CdYJkpBITxyFCDLsmI4RJaTFeQDy6jtMxxK+l+KpsjOwgJudT9pQkphJn2s5R/dKsD7ixzB+gAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+        &lt;source
+          srcset=&quot;/static/a4b99444e5188c2a8979c6ca4c04a70e/8ac56/skill.webp 240w,
+/static/a4b99444e5188c2a8979c6ca4c04a70e/d3be9/skill.webp 480w,
+/static/a4b99444e5188c2a8979c6ca4c04a70e/e46b2/skill.webp 960w,
+/static/a4b99444e5188c2a8979c6ca4c04a70e/f992d/skill.webp 1440w,
+/static/a4b99444e5188c2a8979c6ca4c04a70e/e7b23/skill.webp 1913w&quot;
+          sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+          type=&quot;image/webp&quot;
+        /&gt;
+        &lt;source
+          srcset=&quot;/static/a4b99444e5188c2a8979c6ca4c04a70e/8ff5a/skill.png 240w,
+/static/a4b99444e5188c2a8979c6ca4c04a70e/e85cb/skill.png 480w,
+/static/a4b99444e5188c2a8979c6ca4c04a70e/d9199/skill.png 960w,
+/static/a4b99444e5188c2a8979c6ca4c04a70e/07a9c/skill.png 1440w,
+/static/a4b99444e5188c2a8979c6ca4c04a70e/9e818/skill.png 1913w&quot;
+          sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+          type=&quot;image/png&quot;
+        /&gt;
+        &lt;img
+          class=&quot;gatsby-resp-image-image&quot;
+          src=&quot;/static/a4b99444e5188c2a8979c6ca4c04a70e/d9199/skill.png&quot;
+          alt=&quot;skill&quot;
+          title=&quot;skill&quot;
+          loading=&quot;lazy&quot;
+          style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        /&gt;
+      &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;먼저 &lt;code class=&quot;language-text&quot;&gt;keyword_rcmd&lt;/code&gt; 라는 스킬을 정의한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 960px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/aca3958a1ed9ea815dad5f88d199300a/9e818/main.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 49.16666666666667%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABkElEQVQoz42SaUvDQBRF80u1Vj/UDf+anwRBwY0W1K5aNE1rSZo2Tbols6RZvc5MEMGlGDgMvLwc3n0T7aBygnJpH6XSgWJrq4LtbYmsfdb3f7C7e4ydnUN1lsviLB9hb+8Y2qmeoO7kCDlHQDmyHIiTDEmaI83eFbKWfyMTddkXxQnCKAVZ5+obzfQo3FUIx1viZWALJhjaHgzLVejmFJ2+jbbxO63eCE3dQl0fYTr3oVHCwFiIhc9QvddRrb3godmH5SxgTuZKetd5w217gNvO78j3160+bHcFbb4kILQQnl+2cHZWx8VVB87Mx0Q0DMcz1LpDVJ83I6VjTwhnCx+cR1gRDlNEbTQNTIWsJeLUX2UUC7Xn/wgHhZCyNaiKzPHaM8BZgChJ0Bt5Crmjm3YR60+eishKKOMyIZ2vKLp9C2NnBhIQcZPvkA9lHI9iUjnxJhrqUoJiQilV4jDGYunDNEfIswwTksL2U3VphH71bUILxO6KZg7GQ8RxjERETuMIhsuhu2vxjxbCYj2b+QAte8KdqKpbugAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+        &lt;source
+          srcset=&quot;/static/aca3958a1ed9ea815dad5f88d199300a/8ac56/main.webp 240w,
+/static/aca3958a1ed9ea815dad5f88d199300a/d3be9/main.webp 480w,
+/static/aca3958a1ed9ea815dad5f88d199300a/e46b2/main.webp 960w,
+/static/aca3958a1ed9ea815dad5f88d199300a/f992d/main.webp 1440w,
+/static/aca3958a1ed9ea815dad5f88d199300a/e7b23/main.webp 1913w&quot;
+          sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+          type=&quot;image/webp&quot;
+        /&gt;
+        &lt;source
+          srcset=&quot;/static/aca3958a1ed9ea815dad5f88d199300a/8ff5a/main.png 240w,
+/static/aca3958a1ed9ea815dad5f88d199300a/e85cb/main.png 480w,
+/static/aca3958a1ed9ea815dad5f88d199300a/d9199/main.png 960w,
+/static/aca3958a1ed9ea815dad5f88d199300a/07a9c/main.png 1440w,
+/static/aca3958a1ed9ea815dad5f88d199300a/9e818/main.png 1913w&quot;
+          sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+          type=&quot;image/png&quot;
+        /&gt;
+        &lt;img
+          class=&quot;gatsby-resp-image-image&quot;
+          src=&quot;/static/aca3958a1ed9ea815dad5f88d199300a/d9199/main.png&quot;
+          alt=&quot;main&quot;
+          title=&quot;main&quot;
+          loading=&quot;lazy&quot;
+          style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        /&gt;
+      &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;위와 같이 메인 메뉴에서 &lt;code class=&quot;language-text&quot;&gt;음식점검색&lt;/code&gt; 메뉴로 연결될 수 있도록 설정해주고&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 960px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/7c8a196f5493a20662fdc4fd9c003fc5/9e818/detail.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 49.16666666666667%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABhUlEQVQoz52R207CQBCG90ZNIGiIGKPxkPgMJt76cj6AiVfGoJwCPoLP4b0oQgXa3XYPLY0Cv7NbENQQE5t8mel0d+b/p+zs9BzbxSOsb+ygUDhALrfnyOf3ib2VbG0eolg8Rmn7BKXSCfK5fayv7YJdXFZwddPE3W0Dd5UmqtUWKi5mea12v5JyuTE738L1TR3l2zrYQwd4FECaptBmhP88E+J9lrNUSSTaoPMWYOgL+EIjDBWkNFAqhvyBrYWRBhcKItSOKDKQVLN1FqoEipQpiv0+hxD2MB3k2uW/4LZBTCTglC9jBzJOE5ROEJGigEsqJn/S6w3Q7fWdCK1HblXGZJGFMv5q6PsR2TUOMYtzrCpBNm2TwYCTG981MyZ1uOYmAdOzzvbjsnzflwgClb0H1q4Bp91+jMeYTuEYjyeOCSElDdNx1tDu0BsKuixJabyAlm2jtNhd64W1uU1jvteY+3OUPL100W4/4/W1C897Q8/z8PzSIesSJk6dHTdcJyvIhH0Cpz24p6GczxwAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+        &lt;source
+          srcset=&quot;/static/7c8a196f5493a20662fdc4fd9c003fc5/8ac56/detail.webp 240w,
+/static/7c8a196f5493a20662fdc4fd9c003fc5/d3be9/detail.webp 480w,
+/static/7c8a196f5493a20662fdc4fd9c003fc5/e46b2/detail.webp 960w,
+/static/7c8a196f5493a20662fdc4fd9c003fc5/f992d/detail.webp 1440w,
+/static/7c8a196f5493a20662fdc4fd9c003fc5/e7b23/detail.webp 1913w&quot;
+          sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+          type=&quot;image/webp&quot;
+        /&gt;
+        &lt;source
+          srcset=&quot;/static/7c8a196f5493a20662fdc4fd9c003fc5/8ff5a/detail.png 240w,
+/static/7c8a196f5493a20662fdc4fd9c003fc5/e85cb/detail.png 480w,
+/static/7c8a196f5493a20662fdc4fd9c003fc5/d9199/detail.png 960w,
+/static/7c8a196f5493a20662fdc4fd9c003fc5/07a9c/detail.png 1440w,
+/static/7c8a196f5493a20662fdc4fd9c003fc5/9e818/detail.png 1913w&quot;
+          sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+          type=&quot;image/png&quot;
+        /&gt;
+        &lt;img
+          class=&quot;gatsby-resp-image-image&quot;
+          src=&quot;/static/7c8a196f5493a20662fdc4fd9c003fc5/d9199/detail.png&quot;
+          alt=&quot;detail&quot;
+          title=&quot;detail&quot;
+          loading=&quot;lazy&quot;
+          style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        /&gt;
+      &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;상세 메뉴에서는 앞서서 만든 skill을 연결해주고 응답을 스킬데이터 사용으로 지정해주었다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;상세 메뉴에서 parameter도 설정 필요: TBA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;이렇게 설정해준 후 &lt;code class=&quot;language-text&quot;&gt;배포&lt;/code&gt; 를 해주면 실제 서비스에서 카드가 등장하게 된다.
+그렇지만 아직은 요청을 하면 1이 사라지지 않고 응답이 오지 않는데, AWS Lambda를 완성해 응답이 오도록 해주자.&lt;/p&gt;
+&lt;h1 id=&quot;2-aws-lambda-생성&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-aws-lambda-%EC%83%9D%EC%84%B1&quot; aria-label=&quot;2 aws lambda 생성 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. AWS Lambda 생성&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;aws console에 접속해 Lambda 메뉴에 들어간다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 960px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/819569b031627042b9e524be2be544d4/41870/create.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 52.083333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABb0lEQVQoz52RiU7CQBCG+/6vYmJClNsjPIW3HDViLRS6Ld17f2cWUFATE5t82ZnZ2X+OJp3BNU5aPbTaA5z3LtEm+Oz0L9AdXKI3vKLYEGedfoy1+9v7SJfy+1foXYzAOnwmzju8vmUoqxob2cCHgL+/8MMPwUcrKUSNx/kCk3yNl1WNeW2QZjnSNMV7vkApBKq6xluWffpSKghRYTqbRXKKi6rCpmmQ1JsGy7VATUlVIwkVBURZoqIkpRSUlCQiyZbR10RDj9ecQ7mSfBbju4SNlEZe0ciNsZCWcZDOx5NjWw5tC0P3NCe89xFL75TWJEiV58sVsmINQV0qH6Ao+TfkHksCPhxtk0V1FKQOFyTIjjUmVtrjDmzvXOyICfQ4fPt5n4K8iyV1x7vU2tAe9Bf6y9ZcjES3BdyOXWGK8wp4lwkHiqKIjnX2qMNDjDUw5hc4rmlV5TtNZJBMpikensb/53mCu9sb3I9OMR0/4QM4Vfa+zJXWfAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+        &lt;source
+          srcset=&quot;/static/819569b031627042b9e524be2be544d4/8ac56/create.webp 240w,
+/static/819569b031627042b9e524be2be544d4/d3be9/create.webp 480w,
+/static/819569b031627042b9e524be2be544d4/e46b2/create.webp 960w,
+/static/819569b031627042b9e524be2be544d4/f992d/create.webp 1440w,
+/static/819569b031627042b9e524be2be544d4/d822c/create.webp 1788w&quot;
+          sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+          type=&quot;image/webp&quot;
+        /&gt;
+        &lt;source
+          srcset=&quot;/static/819569b031627042b9e524be2be544d4/8ff5a/create.png 240w,
+/static/819569b031627042b9e524be2be544d4/e85cb/create.png 480w,
+/static/819569b031627042b9e524be2be544d4/d9199/create.png 960w,
+/static/819569b031627042b9e524be2be544d4/07a9c/create.png 1440w,
+/static/819569b031627042b9e524be2be544d4/41870/create.png 1788w&quot;
+          sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+          type=&quot;image/png&quot;
+        /&gt;
+        &lt;img
+          class=&quot;gatsby-resp-image-image&quot;
+          src=&quot;/static/819569b031627042b9e524be2be544d4/d9199/create.png&quot;
+          alt=&quot;create&quot;
+          title=&quot;create&quot;
+          loading=&quot;lazy&quot;
+          style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        /&gt;
+      &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;다음과 같이 lambda 함수를 생성해준다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Runtime은 nodeJS v.14로 해준다. 실제 runtime이 돌아갈 때는 ES5 문법으로 돌아가기 때문에 lambda 코드를 ES5 문법으로 짜주거나, typescript로 작성한 뒤에 transpile 해줘야 한다. 이번에는 간단한 작성을 위해 ES5 문법을 적용했다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/distrue/snuff_lambda&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;lambda 코드 github&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;완성된 코드는 다음과 같이 &lt;code class=&quot;language-text&quot;&gt;node_modules&lt;/code&gt;를 포함해 압축한 후 lambda에서 업로드 해주면 된다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 922px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/5dfaac0aae6880efd8a603ab3acb4df1/6da96/zip.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 47.91666666666667%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAACPUlEQVQoz3WSS08UQRDH52aiJpJ4MoEo+2Jmuue9OzO7w77YlYUFA8SgPIwGZQU0yIGLifFD+AmIJ6PxZLx4VRFNvHgzvg4m+jV+9sxy8MLhl+rqrvpXd1VrSc3Dkg5RJSYOq0x3p+nP9JlM6lTKIWElIo6qTLU7NBstktok1aiWrRv1Zmab9VYWn6LFcYwUDr4TqsQGthMroQTXibCtMo5VyQj8mhJqYtsRQoS4blXFxHiuig8SPDtUOj7azPxVdUMP59YBycMvjA8+cnr16Jjh+szaJ0ZufMC5f4TcOeLi7UPOr7/j3OpbxjbeY2wdMrb5mfzCEyU4t6QqupR3XlF5/Bdr4zW55WdcWn5O/voLCisvuTB/wNmlN5j7v5H7vxi994NTN78ycucbxb2f5He/M7r7h/Hlp2jt9mUsJVjrrFCf26beWaPdWcUvzw+pXMH1ZrHja0S9beLeFn73LrI9QLQGhMoPugPk1DYiWkTrzagEy0PPTzAxXiAKqvS6fUK/itRdLFO1QwZYusTIFTALJYRCFoekvnns67kiWpKoRqspS8PDKNm0p+boL6xjBy2EM4lw60i3odpSQRgu0vQzhDEk81VuavWShdZqddRUI8wJB6MoSPqb2IuPyHV2KXT3FA8oTO+jBz1ESQyTU+H/EIaTWb0o0cJyjGurakow3WjUmsx2erimja2emeIYlnq+hak7iBMYCgq0hdm+GspwIz2IylX1p8rKd7CF+vSmmw1NHt8i7elJGCXJP7yoWh3U4gkpAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+        &lt;source
+          srcset=&quot;/static/5dfaac0aae6880efd8a603ab3acb4df1/8ac56/zip.webp 240w,
+/static/5dfaac0aae6880efd8a603ab3acb4df1/d3be9/zip.webp 480w,
+/static/5dfaac0aae6880efd8a603ab3acb4df1/88718/zip.webp 922w&quot;
+          sizes=&quot;(max-width: 922px) 100vw, 922px&quot;
+          type=&quot;image/webp&quot;
+        /&gt;
+        &lt;source
+          srcset=&quot;/static/5dfaac0aae6880efd8a603ab3acb4df1/8ff5a/zip.png 240w,
+/static/5dfaac0aae6880efd8a603ab3acb4df1/e85cb/zip.png 480w,
+/static/5dfaac0aae6880efd8a603ab3acb4df1/6da96/zip.png 922w&quot;
+          sizes=&quot;(max-width: 922px) 100vw, 922px&quot;
+          type=&quot;image/png&quot;
+        /&gt;
+        &lt;img
+          class=&quot;gatsby-resp-image-image&quot;
+          src=&quot;/static/5dfaac0aae6880efd8a603ab3acb4df1/6da96/zip.png&quot;
+          alt=&quot;zip&quot;
+          title=&quot;zip&quot;
+          loading=&quot;lazy&quot;
+          style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        /&gt;
+      &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 960px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/08dec68b050ae9de532b182898857380/05244/upload.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 52.083333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABiklEQVQoz5VSy27bMBDU/39IgwZObCt+AelX9NBLgLhJHb1FipJIWpbl6e7acoIAOUTAgMvlcDi7qyBcPeLndIWbSYgftzPczde4D8+YLdaYLzcICdNwibvZQnLTh82VM5mvMJktKd7gYf0LAejLiwLGGHjv8N3vdBowDEeOJA5aa1GZCtZ57PcdXFujVQnquoFzDl3X0UP+A/awdOdzjlddGQRCaM6kQ9+jcy2q9BVNS/vDQcCivPIlRw8bU8u+J/54zqibBoG1HtE/TY5qIfTHI/rhJPFIHIVZjF1neS7QWssjo6gIMqEocpR0yJaVrlBVlRzyYwyOG0bbChRxS6UEmriOnXs/OrRI0hSmvlwSISt9iXWERMXiinvNeV55fwUJbf++4Hm7JY36LFiUSuwrpRHFKZIkERd/dr/xnD6h42HRZX/BR0EuOYpi7Ha7syAnslIjzXK0VE5SGLzFCdIyo+kbOOuvffoKp4F/neG9h2OZLFiyS2pBVpZSHue44eNEZXCfMAqz4H9RDPVelU1rYwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+        &lt;source
+          srcset=&quot;/static/08dec68b050ae9de532b182898857380/8ac56/upload.webp 240w,
+/static/08dec68b050ae9de532b182898857380/d3be9/upload.webp 480w,
+/static/08dec68b050ae9de532b182898857380/e46b2/upload.webp 960w,
+/static/08dec68b050ae9de532b182898857380/f992d/upload.webp 1440w,
+/static/08dec68b050ae9de532b182898857380/fb80a/upload.webp 1752w&quot;
+          sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+          type=&quot;image/webp&quot;
+        /&gt;
+        &lt;source
+          srcset=&quot;/static/08dec68b050ae9de532b182898857380/8ff5a/upload.png 240w,
+/static/08dec68b050ae9de532b182898857380/e85cb/upload.png 480w,
+/static/08dec68b050ae9de532b182898857380/d9199/upload.png 960w,
+/static/08dec68b050ae9de532b182898857380/07a9c/upload.png 1440w,
+/static/08dec68b050ae9de532b182898857380/05244/upload.png 1752w&quot;
+          sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+          type=&quot;image/png&quot;
+        /&gt;
+        &lt;img
+          class=&quot;gatsby-resp-image-image&quot;
+          src=&quot;/static/08dec68b050ae9de532b182898857380/d9199/upload.png&quot;
+          alt=&quot;upload&quot;
+          title=&quot;upload&quot;
+          loading=&quot;lazy&quot;
+          style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        /&gt;
+      &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&quot;3-api-gateway와-연결&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-api-gateway%EC%99%80-%EC%97%B0%EA%B2%B0&quot; aria-label=&quot;3 api gateway와 연결 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3. API gateway와 연결&lt;/h3&gt;
+&lt;p&gt;Lambda가 호출될 수 있도록 API endpoint를 추출하자.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 960px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/20030f50b54c08bf2a832de0aba49647/05244/apigateway.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 52.083333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABK0lEQVQoz5WQ/W6CMBTFef/n2D/7ByfCcLI3MNsjbMmSTUXlo9CWgnJ2e0UDRBOFnPTefvx6Tp2JF8ILIkxJT88uXNu/Rnjx3zALFwjmEcsL5nCnPqZ+iMmMam+o0/53OOh9UpY4Hg5UtdxrrVEUBbXtZU/La9dlf8cYg4YgSmn8rdbY7fYQBBGiwCaOaW5FtYBUCjmNSZoizTIkI6WdLg4tmOHHFmK/we8yhK4M6trgSOvNzyfNr5GXki/gS6/Iabs4FcHi7Y5vkVKybG2d2ujKxi9LdnkLNgCausaWgFuKXNHhxmiGZQStqor78hGgdWid2JgiiSG/llBUK3o7QTHV9wc/xf2RyUWW5+wgYxVcn3Xq7SHRjXcAh3HGLkQPJh4D9p2NdV6/BfwHWX/07pndi7kAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+        &lt;source
+          srcset=&quot;/static/20030f50b54c08bf2a832de0aba49647/8ac56/apigateway.webp 240w,
+/static/20030f50b54c08bf2a832de0aba49647/d3be9/apigateway.webp 480w,
+/static/20030f50b54c08bf2a832de0aba49647/e46b2/apigateway.webp 960w,
+/static/20030f50b54c08bf2a832de0aba49647/f992d/apigateway.webp 1440w,
+/static/20030f50b54c08bf2a832de0aba49647/fb80a/apigateway.webp 1752w&quot;
+          sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+          type=&quot;image/webp&quot;
+        /&gt;
+        &lt;source
+          srcset=&quot;/static/20030f50b54c08bf2a832de0aba49647/8ff5a/apigateway.png 240w,
+/static/20030f50b54c08bf2a832de0aba49647/e85cb/apigateway.png 480w,
+/static/20030f50b54c08bf2a832de0aba49647/d9199/apigateway.png 960w,
+/static/20030f50b54c08bf2a832de0aba49647/07a9c/apigateway.png 1440w,
+/static/20030f50b54c08bf2a832de0aba49647/05244/apigateway.png 1752w&quot;
+          sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+          type=&quot;image/png&quot;
+        /&gt;
+        &lt;img
+          class=&quot;gatsby-resp-image-image&quot;
+          src=&quot;/static/20030f50b54c08bf2a832de0aba49647/d9199/apigateway.png&quot;
+          alt=&quot;apigateway&quot;
+          title=&quot;apigateway&quot;
+          loading=&quot;lazy&quot;
+          style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        /&gt;
+      &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;다음과 같이 amazon console에서 API Gateway로 접근한 후 HTTP API를 생성한다. &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;통합을 lambda로 연결, 기존에 생성한 Lambda function과 연결해준다.&lt;/li&gt;
+&lt;li&gt;경로 구성에서 &lt;code class=&quot;language-text&quot;&gt;POST&lt;/code&gt; &lt;code class=&quot;language-text&quot;&gt;/snuff_keyword_rcmd&lt;/code&gt; 와 실제 lambda function을 연결해준다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;$default&lt;/code&gt; 스테이지로 두고 API Gateway를 생성한다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;이제 Lambda로 가보면 API endpoint가 연결된 것을 확인할 수 있다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 960px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/d91f63fc8d80836f171fd5c94eba5061/05244/lambdaapi.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 52.083333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABeklEQVQoz5VS207DMAzt//8KEjy0u3Qw+AuEBAhtha7dml6SNm26rgfbG5o02AOVjmwn9omPXS+YPeDmLsCtHyKYLeETJuETgvkS0/ABs8VSEMwW8CdzTOf34Br/ApPwUWo8/PoOGE2CcRzx/2+EZ3SDeF0gLwo416PrHOrawLYt+R2stWhPvtYGVaWx3e3IVpTX0F0n94yirOBZ22KbKgmsbYTAnhIuIedEnGUKSZIKsdZaHuNzbQy8hgjyIhfCTGVI0pT8EhUlXoIL2JbV2T/GlSgUwlqX1HotM3POIS9z6UamSWfjCcPhgL7vJZeb6CiXO+MazjemPnfIAV+4vkMa1Xh5fscqikhWIog3GyilMAzDVRzowTNhfSTsXIdaO7y9fmC1WgmJYWkk6afr4y7/2C+pYB4hLIpSNtg0VtI31NFXHMtc8pzmS1bRfDOVww3Xf6czIS2B58ObcmRZ4nodIYo+sd3uiEjRZjN6oETr9iJxfyGZY5b8DX30995dqd+oAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+        &lt;source
+          srcset=&quot;/static/d91f63fc8d80836f171fd5c94eba5061/8ac56/lambdaapi.webp 240w,
+/static/d91f63fc8d80836f171fd5c94eba5061/d3be9/lambdaapi.webp 480w,
+/static/d91f63fc8d80836f171fd5c94eba5061/e46b2/lambdaapi.webp 960w,
+/static/d91f63fc8d80836f171fd5c94eba5061/f992d/lambdaapi.webp 1440w,
+/static/d91f63fc8d80836f171fd5c94eba5061/fb80a/lambdaapi.webp 1752w&quot;
+          sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+          type=&quot;image/webp&quot;
+        /&gt;
+        &lt;source
+          srcset=&quot;/static/d91f63fc8d80836f171fd5c94eba5061/8ff5a/lambdaapi.png 240w,
+/static/d91f63fc8d80836f171fd5c94eba5061/e85cb/lambdaapi.png 480w,
+/static/d91f63fc8d80836f171fd5c94eba5061/d9199/lambdaapi.png 960w,
+/static/d91f63fc8d80836f171fd5c94eba5061/07a9c/lambdaapi.png 1440w,
+/static/d91f63fc8d80836f171fd5c94eba5061/05244/lambdaapi.png 1752w&quot;
+          sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+          type=&quot;image/png&quot;
+        /&gt;
+        &lt;img
+          class=&quot;gatsby-resp-image-image&quot;
+          src=&quot;/static/d91f63fc8d80836f171fd5c94eba5061/d9199/lambdaapi.png&quot;
+          alt=&quot;lambdaapi&quot;
+          title=&quot;lambdaapi&quot;
+          loading=&quot;lazy&quot;
+          style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        /&gt;
+      &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Lambda 에서 모니터링 &gt; 로그 &gt; CloudWatch에서 로그보기 로 접근하면 cloudwatch 에서 lambda의 실행 결과를 확인할 수 있다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;디버깅을 해보면서 잘 동작하지 않으면 빠진 부분이 있지는 않은지 확인해보자&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;3-정상-동작-확인&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-%EC%A0%95%EC%83%81-%EB%8F%99%EC%9E%91-%ED%99%95%EC%9D%B8&quot; aria-label=&quot;3 정상 동작 확인 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3. 정상 동작 확인&lt;/h1&gt;
+&lt;p&gt;이제 챗봇에서 응답을 확인해보면 정상적으로 답변을 해주고 있음을 확인할 수 있다. &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/6f94927436d8efb4c0870942de173df4/result.gif&quot; alt=&quot;result&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;사용된 library에 대한 example, 사용법은 다른 페이지에서 다루고자 한다.&lt;/li&gt;
+&lt;li&gt;ColdStart 대응: TBA&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[스누푸파 카카오채널 (1) Puppeteer로 인스타 크롤링하기]]></title><description><![CDATA[스누푸파 카카오 채널 리뉴얼! puppeteer를 이용해 인스타그램을 크롤링 했습니다]]></description><link>https://lumen.netlify.com/posts/snuff_channel_1</link><guid isPermaLink="false">https://lumen.netlify.com/posts/snuff_channel_1</guid><pubDate>Tue, 16 Mar 2021 22:00:37 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 898px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/04e8d92ccca812e3e1f193639ef09065/84cc5/210316.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 66.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAACoUlEQVQ4y41S+0+SYRjlb6pWS03KvGWWWq6ylmvr8kNNV9mWWk5zgeYNUExylro5SZTUMHIZCPFD4g2SRUIZBqLj9ikCKiCcvu9FnW5ZPdvZ++x7np3nnLOPFY1GsV/tnm33ka131beORccylpwre3ZYTBMMBhEOhwmcTic8Hg9CoRBZYBCJRHbA1OzcEtrEGsx+X8TQiB49somdGcvn80GtVkMmk0EqlYLP50MkEsFisfxRNaOsq38Mk7qfUGtmMa2bx/tRAz5pTTFCr9dLCLVaLYxGI6xWK0wmE3Q6HVwuFyiKgsFgILNoJAyzxYHeoQk4HF4s2Cn8sroxpbegTz4VI3S53Ojs7IREIkF3dzeGh4fJAS6XCx6PB71eDw6Hg5KSUizaF0B519HapcL4xBzEknF8VBohHZqEfHQmRrjbjj8QQCCwRucRpZUt02ptpA/Q3+12OzY2gmRPPWaC8JUCI6qvGJBPo7lDCc+KP0Zo/uGAw7mKtfUQ/qc2t8KfnJmHZtwM1WcT3JQv9gfQMxY7rR6Zuc3Iu/YStwq6UFoxAEGzkthRjH7DF4MNlnkX3B4fNjcj/zzIOpZSh7ikGhxhP8OhhCocjOcSHGAQx8XhxGokZfCQdaEF+TfaUVD0GpVV79DSpkbvmymoNGboZ2ywLVDw+zfASkytB5sBrfR4esMesNMakJ7dhIwcIZJP88lRBkdPMAKqkXpWgJRMAc5ffoHsiy3IvdIaI9wP8SdrcfV6O+7cE+P2XTHKn8pQWj6Ax08GUVzWj1reB5RVvgWnRo5zeSLicF9CJortnlF7v7gPjyoG8ZAmKnzQA75QgcKiHjpvBRqfK5F/s4NE91fCbSQk1+EUbT31jABpWY1Iz2oiFpNpu8ybc0lErDN7vwHT0iclePfqIwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+        &lt;source
+          srcset=&quot;/static/04e8d92ccca812e3e1f193639ef09065/8ac56/210316.webp 240w,
+/static/04e8d92ccca812e3e1f193639ef09065/d3be9/210316.webp 480w,
+/static/04e8d92ccca812e3e1f193639ef09065/005c4/210316.webp 898w&quot;
+          sizes=&quot;(max-width: 898px) 100vw, 898px&quot;
+          type=&quot;image/webp&quot;
+        /&gt;
+        &lt;source
+          srcset=&quot;/static/04e8d92ccca812e3e1f193639ef09065/8ff5a/210316.png 240w,
+/static/04e8d92ccca812e3e1f193639ef09065/e85cb/210316.png 480w,
+/static/04e8d92ccca812e3e1f193639ef09065/84cc5/210316.png 898w&quot;
+          sizes=&quot;(max-width: 898px) 100vw, 898px&quot;
+          type=&quot;image/png&quot;
+        /&gt;
+        &lt;img
+          class=&quot;gatsby-resp-image-image&quot;
+          src=&quot;/static/04e8d92ccca812e3e1f193639ef09065/84cc5/210316.png&quot;
+          alt=&quot;img&quot;
+          title=&quot;img&quot;
+          loading=&quot;lazy&quot;
+          style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        /&gt;
+      &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h1 id=&quot;1-puppeteer로-스누푸파-페이지-크롤링&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-puppeteer%EB%A1%9C-%EC%8A%A4%EB%88%84%ED%91%B8%ED%8C%8C-%ED%8E%98%EC%9D%B4%EC%A7%80-%ED%81%AC%EB%A1%A4%EB%A7%81&quot; aria-label=&quot;1 puppeteer로 스누푸파 페이지 크롤링 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. Puppeteer로 스누푸파 페이지 크롤링&lt;/h1&gt;
+&lt;p&gt;Puppeteer는 google chrome을 control 할수 있는 nodeJS 기반의 라이브러리다.
+기존에는 crawling을 위해 Selenium을 많이 활용하는데, Puppeteer는 selenium 보다 직관적인 문법과
+중간 driver를 거치지 않아 빠른 동작이 가능한 장점이 있다. (&lt;a href=&quot;https://github.com/puppeteer/puppeteer&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;puppeteer link&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;puppeteer를 통해 &lt;a href=&quot;https://instagram.com/snu_foodfighter&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;스누푸파&lt;/a&gt;의 페이지를 크롤링해 각 리뷰와 사진을 추출할 수 있도록 하였다.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/distrue/snuff_macro&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;github link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;실제 개발하면서 다음과 같은 어려움을 겪었었다.&lt;/p&gt;
+&lt;h3 id=&quot;http-429-too-much-requests&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#http-429-too-much-requests&quot; aria-label=&quot;http 429 too much requests permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;HTTP 429 (Too much requests)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Instagram 에서는 특정 유저가 반복적인 이미지를 로드하는 행동을 반복하는 경우 봇이나 악의적 유저로 판단하고 page의 content를 로드하지 못하도록 이미지 / 콘텐츠 요청에 대해 &lt;code class=&quot;language-text&quot;&gt;429&lt;/code&gt; response를 반환한다. &lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;실제로 봇을 디버깅하며 반복적인 이미지 요청으로 간주하는 case를 몇가지 짚어보자면 다음과 같다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;로그인 시 &lt;code class=&quot;language-text&quot;&gt;잠시 후에 다시 시도해주세요&lt;/code&gt;: 로그인을 반복적으로 많이 시도했을 때 발생한다. 이 경우 계정 단위로 잠기기 때문에 계정을 교체해주면 된다. 실제로 개발하면서 3개의 계정을 바꿔가며 사용했다. 하나의 계정이 잠기면 보통 12시간 / 24시간 정도 계정이 잠기게 된다. &lt;/li&gt;
+&lt;li&gt;page content 로드 시 &lt;code class=&quot;language-text&quot;&gt;429 Too Much Requests&lt;/code&gt;: 이미지를 일정 시간보다 빠르게, 반복적으로 요청하는 경우 (2초 이내 정도로 추정)에도 봇으로 간주되게 된다. 한 가지 확인한 점은 이 429 기준도 ID 정보 값을 기준으로 한다는 것이다. (IP 단위 차단은 아직은 받아 본적이 없다, 반복적으로 계정이 정지되면 IP도 차단될 수도…?)&lt;/li&gt;
+&lt;li&gt;디버깅 단계가 아니면 계정의 로그인 정지는 크게 걱정할 필요는 없을 듯 하고, 이미지 로드에 대한 시간의 경우 강제로 이미지를 보고 기다리는 시간을 지정시켰다. (code에서 포스트 로드 후 2초씩 대기하도록 지정함)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;댓글에서-태그-가져오기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%8C%93%EA%B8%80%EC%97%90%EC%84%9C-%ED%83%9C%EA%B7%B8-%EA%B0%80%EC%A0%B8%EC%98%A4%EA%B8%B0&quot; aria-label=&quot;댓글에서 태그 가져오기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;댓글에서 태그 가져오기&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;스누푸파는 게시물에 대한 태그를 본문이 아닌 댓글에 숨겨 두었다. 크게 2가지 case로 나뉘게 된다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;댓글에 바로 써두는 경우&lt;/li&gt;
+&lt;li&gt;댓글에는 아이콘 하나만 배치하고, 댓글의 답글에 태그를 적는 경우&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;두가지 경우에 대해 대응할 수 있도록 최상위 댓글까지 접근한 후, &lt;code class=&quot;language-text&quot;&gt;snu_foodfighter&lt;/code&gt; 이름을 가진 댓글의 답글을 확인해 긁어 오도록 했다. &lt;/li&gt;
+&lt;li&gt;단, 이벤트 게시물의 경우 댓글이 너무 많이 써있는 경우가 있는데, 이 경우들은 댓글 로드가 150개 이상인 경우 이벤트 게시물로 간주하고 넘어가도록 설정하였다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;2-mongodb에-크롤링-데이터-업로드&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-mongodb%EC%97%90-%ED%81%AC%EB%A1%A4%EB%A7%81-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%97%85%EB%A1%9C%EB%93%9C&quot; aria-label=&quot;2 mongodb에 크롤링 데이터 업로드 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. MongoDB에 크롤링 데이터 업로드&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;크롤링 데이터는 csv로 추출하였고, 추출된 데이터를 mongoDB에 업로드해 이후 개발할 lambda에서 데이터를 긁어 올 수 있도록 하였다.&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[토이 프로젝트의 DB 선택(RDB, DocumentDB)]]></title><description><![CDATA[RDB와 DocumentDB의 비교와 실제 선정할 때 고려할 요인들을 정리해 보았습니다]]></description><link>https://lumen.netlify.com/posts/toy-project-database</link><guid isPermaLink="false">https://lumen.netlify.com/posts/toy-project-database</guid><pubDate>Fri, 17 Jul 2020 22:00:37 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 898px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/81e5cf21d3aa22021bb02c7f1c254145/84cc5/200717.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 66.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAACRElEQVQ4y4WS628SQRTF+QP97gfjBxtrbFI1Eotai7b4KqWFpSyPaKKSWl5bQGuUSExJG6sJQaE8lE0To60SQBGBgiC7e9yZhYVGGie5mcxk9zfnnns0hu3rsL+9DW9iEY8TJloPtu9iJb4Af9oMX2qJln/HrBY5B3Ys8KZM4NIMivXPIEuSJGh0W1cx9+IaXC8NMK/rYX1+A6bQDJyvboLLWP4BqrCkAis19nowke6aoHzJpS3qx2QnoEB6cO5D+zAPhVll2D6FiKJA1VHgqJ+8yUH5kj2F8gMKbAGBFINyDyZBUaa2TGCrsm9chkHw4zLWclZawQ9WhPM2hOQ7LsvAI3vsTS0inLOjIVYooPOng263KyscQDVh3oYr9nGcN57E3KNJGNzncMdzEVPWMVxmT2PaeQZnZ49jankMJ7TH8Doew2ZsC9lcFm63Gw6HAyzLguf5noeyknmfFvp7E5h9OAn9/QkKnfdrcYk5hVsrFzDtGofRq0NwPYCve9+wEduggHg8jkgkgmg0ikKhMPCQtERaI/Dhlp/wLLicGeu8E9V2Ef9bqod0GMmlQ4Pxp2Rv3xuxlrbhx4HyuiB06U/Es/5OShBE9U4zHNjhnJFpBjMsKk1FmSgJqgolIhI5qHFRh3IULHQEjKx6q41aezDZzXd5zDifoVKtDYD9PK4mjTLMjp+t0khYqdbEfqWOYmEX7V9KFpP5L9AxHKq1xmGFJGdPc66RsD7wU7mKN7sFHBQzEEoJCJ0mfreaKJW/o95s4y8HT2DYy2c91gAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+        &lt;source
+          srcset=&quot;/static/81e5cf21d3aa22021bb02c7f1c254145/8ac56/200717.webp 240w,
+/static/81e5cf21d3aa22021bb02c7f1c254145/d3be9/200717.webp 480w,
+/static/81e5cf21d3aa22021bb02c7f1c254145/005c4/200717.webp 898w&quot;
+          sizes=&quot;(max-width: 898px) 100vw, 898px&quot;
+          type=&quot;image/webp&quot;
+        /&gt;
+        &lt;source
+          srcset=&quot;/static/81e5cf21d3aa22021bb02c7f1c254145/8ff5a/200717.png 240w,
+/static/81e5cf21d3aa22021bb02c7f1c254145/e85cb/200717.png 480w,
+/static/81e5cf21d3aa22021bb02c7f1c254145/84cc5/200717.png 898w&quot;
+          sizes=&quot;(max-width: 898px) 100vw, 898px&quot;
+          type=&quot;image/png&quot;
+        /&gt;
+        &lt;img
+          class=&quot;gatsby-resp-image-image&quot;
+          src=&quot;/static/81e5cf21d3aa22021bb02c7f1c254145/84cc5/200717.png&quot;
+          alt=&quot;img&quot;
+          title=&quot;img&quot;
+          loading=&quot;lazy&quot;
+          style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        /&gt;
+      &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;RDB는 관계형 데이터 모델에 기초를 둔 데이터베이스이다. 관계형 데이터 모델은 모든 데이터를 2차원 형태의 테이블로 표현해 처리한다. 각 표현개체에 따라 데이터 간의 상관관계에서 개체간의 관계를 표현한 것이다. 각 Table을 schema를 통해 정의하고, SQL 질의문을 통해 데이터를 처리한다.&lt;/p&gt;
 &lt;h3 id=&quot;relational-db--nosql&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#relational-db--nosql&quot; aria-label=&quot;relational db  nosql permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Relational DB &amp;#x26; NoSQL&lt;/h3&gt;
 &lt;p&gt;최근 대부분의 DB들은 크게 RDB(Relational DB)와 NoSQL(Not only SQL) 분류로 구분된다.&lt;/p&gt;
 &lt;p&gt;NoSQL은 기존 관계형 DBMS가 갖고 있는 특성 외에 부가적인 특성을 지원하는 DB를 말한다. 우리에게 가장 익숙한 NoSQL은 DocumentDB(MongoDB가 대표적)과 Key-Value(Redis) 방식 등이 있다. 그 중에서도 이번에는 RDB와 DocumentDB에 대해 자세히 살펴보고자 한다.&lt;/p&gt;
