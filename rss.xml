@@ -1,4 +1,67 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Distrue's blog]]></title><description><![CDATA[기술 블로그 by distrue]]></description><link>https://distrue.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 18 Mar 2021 00:06:12 GMT</lastBuildDate><item><title><![CDATA[스누푸파 카카오채널 (2) AWS Lambda로 응답 API 구축]]></title><description><![CDATA[스누푸파 카카오 채널 리뉴얼! AWS Lambda로 응답 API를 구축했습니다.]]></description><link>https://distrue.github.io/posts/snuff_channel_2</link><guid isPermaLink="false">https://distrue.github.io/posts/snuff_channel_2</guid><pubDate>Wed, 17 Mar 2021 22:00:37 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Distrue's blog]]></title><description><![CDATA[기술 블로그 by distrue]]></description><link>https://distrue.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 20 Jun 2021 14:33:17 GMT</lastBuildDate><item><title><![CDATA[Docker Essentials]]></title><description><![CDATA[docker의 기본적인 명령어 정리, docker image를 amazon ECR에 배포하기]]></description><link>https://distrue.github.io/posts/docker_2</link><guid isPermaLink="false">https://distrue.github.io/posts/docker_2</guid><pubDate>Sun, 20 Jun 2021 23:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/05d5db197d1149b7eab387b1b504de29/37523/docker.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 66.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAIAAAAmMtkJAAAACXBIWXMAAAR2AAAEdgG9ParHAAABuUlEQVQoz2NgmPoAiBinPmCe9oBlOggxTXsAESSMIBRIw8T7DBPuMfTfY5hMtH6ItYyTH7huetFx9kPF8XdyC58wTLrPOA3qIqBBQMQIIdE0g/iT70+59On///+///4Dgk+//tmtfwF0CEgbUHbSfZBZU+6DnDYZzeb+e96bXwJ1Xn311X3xtdr9jy+9+nbh9U+gHMeMh7G7X/ttfeWx+WXy3jcRO1+brX4O9SNUc9+9znMfgZpLD75i6LsvPPPR5tsgrsaypwxTHtitf+608YXf1pdem1/G7XmtsfQpUD0j3H6GXqjmS88/r77xYee9T39+//7044/qEpDmkB2vdZY/M139zGTVc+eNLxzWv4jY+Up3xVOgT0H+BYaw88ZXN19+XHH2wb4bzxefvL//xrOdD78CdbLPeBi163Xi3jflx99lHnybsu9N/uF3lcffu29+CZQFaWYER1Luobdffv0Bhtb////OvPwBct4kUIBBQgsUVBA0CTXYQAEwFaQf6Mm4PW98t77in/UQHlWQeGIGIzibcRpqPDODLHkASiQT7jNBuEQlkikPIIgRZgNIdApxSHTuI7IRAPXxt5oFQ5yaAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+        &lt;source
+          srcset=&quot;/static/05d5db197d1149b7eab387b1b504de29/8ac56/docker.webp 240w,
+/static/05d5db197d1149b7eab387b1b504de29/d3be9/docker.webp 480w,
+/static/05d5db197d1149b7eab387b1b504de29/bc514/docker.webp 720w&quot;
+          sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+          type=&quot;image/webp&quot;
+        /&gt;
+        &lt;source
+          srcset=&quot;/static/05d5db197d1149b7eab387b1b504de29/8ff5a/docker.png 240w,
+/static/05d5db197d1149b7eab387b1b504de29/e85cb/docker.png 480w,
+/static/05d5db197d1149b7eab387b1b504de29/37523/docker.png 720w&quot;
+          sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+          type=&quot;image/png&quot;
+        /&gt;
+        &lt;img
+          class=&quot;gatsby-resp-image-image&quot;
+          src=&quot;/static/05d5db197d1149b7eab387b1b504de29/37523/docker.png&quot;
+          alt=&quot;img&quot;
+          title=&quot;img&quot;
+          loading=&quot;lazy&quot;
+          style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        /&gt;
+      &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Docker 이미지를 만들고, 이를 Amazon ECR에 배포하는 과정을 정리해 보았다.&lt;/p&gt;
+&lt;h3 id=&quot;1-docker-image-build-하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-docker-image-build-%ED%95%98%EA%B8%B0&quot; aria-label=&quot;1 docker image build 하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. Docker image build 하기&lt;/h3&gt;
+&lt;p&gt;Docker image는 이미지를 생성하는 지점에 &lt;code class=&quot;language-text&quot;&gt;Dockerfile&lt;/code&gt; 을 작성해두고, cli에서 다음 command를 입력한다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;$ docker build -t &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;image name&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token builtin class-name&quot;&gt;.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이후 &lt;code class=&quot;language-text&quot;&gt;docker images&lt;/code&gt; command를 입력하면 이미지 리스트가 나온다.&lt;/p&gt;
+&lt;h3 id=&quot;2-이미지-tag-naming&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-%EC%9D%B4%EB%AF%B8%EC%A7%80-tag-naming&quot; aria-label=&quot;2 이미지 tag naming permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. 이미지 tag naming&lt;/h3&gt;
+&lt;p&gt;ECR에 배포할 docker image로 바꿔주기 위해서는 image의 name, tag를 바꾸어 주어야 한다. 다음 command를 입력한다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;$ docker tag &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;oldbie image name&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;:latest XXX.dkr.ecr.ap-northeast-2.com/&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;newbie image name&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;:&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;tag stage&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이후 &lt;code class=&quot;language-text&quot;&gt;docker images&lt;/code&gt; command를 다시 입력하면 변경된 태그로 새 이미지가 추가된 것을 확인할 수 있다.&lt;/p&gt;
+&lt;h3 id=&quot;3-ecr에-이미지-배포하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-ecr%EC%97%90-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0&quot; aria-label=&quot;3 ecr에 이미지 배포하기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3. ECR에 이미지 배포하기&lt;/h3&gt;
+&lt;p&gt;Docker에 이미지를 배포하기 이전에, 우선 AWS ECR에 로그인에 성공해야 한다.
+먼저 AWS IAM에서 ECR의 접근 권한을 포함한 access_key, password를 발급받는다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;~/.aws/credentials&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;[keyset]
+aws_access_key_id = XXX
+aws_secret_access_key = XXX&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이후에 다음 command로 AWS docker ECR에 로그인한다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;$ aws ecr get-login-password --region ap-northeast-2 &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; 
+docker login --username AWS --password-stdin XXX.dkr.ecr.ap-northeast-2.amazonaws.com&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이후에는 docker cli에 &lt;code class=&quot;language-text&quot;&gt;XXX.dkr.ecr.ap-northeast-2.amazonaws.com&lt;/code&gt;에 로그인이 완료된 상태로, 다음과 같이 이미지를 배포해주면 된다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;$ docker push XXX.dkr.ecr.ap-northeast-2.amazonaws.com/&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;image name&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;:&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;stage tag&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[스누푸파 카카오채널 (2) AWS Lambda로 응답 API 구축]]></title><description><![CDATA[스누푸파 카카오 채널 리뉴얼! AWS Lambda로 응답 API를 구축했습니다.]]></description><link>https://distrue.github.io/posts/snuff_channel_2</link><guid isPermaLink="false">https://distrue.github.io/posts/snuff_channel_2</guid><pubDate>Wed, 17 Mar 2021 22:00:37 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 898px; &quot;
     &gt;
@@ -42,7 +105,7 @@
 &lt;p&gt;지난 번 &lt;a href=&quot;http://localhost:8000/posts/snuff_channel_1&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;post&lt;/a&gt; 에서 크롤링한 데이터를 mongoDB에 저장해둔 후, 이를 스누푸파 카카오채널에서 응답할 수 있도록 AWS Lambda를 이용해 채널을 개발하였다.&lt;/p&gt;
 &lt;p&gt;카카오채널의 스킬 응답을 구성하기 위해서는 &lt;a href=&quot;https://github.com/distrue/openbuilder-node&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;openbuilder-node&lt;/a&gt; 라이브러리를 활용하였다.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;이 라이브러리는 직접 제작한 라이브러리로 지금은 &lt;code class=&quot;language-text&quot;&gt;v.0.3&lt;/code&gt; 인데, 일반적으로 활용되는 카카오채널의 스킬 응답 / 요청 / 검증 API를 객체화해 사용할 수 있도록 구축해 두었다. 사용해보고 마음에 들면 🌟 한번…ㅎㅎ&lt;/li&gt;
+&lt;li&gt;이 라이브러리는 직접 제작한 라이브러리로 지금은 &lt;code class=&quot;language-text&quot;&gt;v.0.3&lt;/code&gt; 인데, 일반적으로 활용되는 카카오채널의 스킬 응답 / 요청 / 검증 API를 객체화해 사용할 수 있도록 구축해 두었다. 사용해보고 마음에 들면 스타 🌟 한번…ㅎㅎ&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&quot;1-카카오채널-개설과-스킬-등록&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-%EC%B9%B4%EC%B9%B4%EC%98%A4%EC%B1%84%EB%84%90-%EA%B0%9C%EC%84%A4%EA%B3%BC-%EC%8A%A4%ED%82%AC-%EB%93%B1%EB%A1%9D&quot; aria-label=&quot;1 카카오채널 개설과 스킬 등록 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. 카카오채널 개설과 스킬 등록&lt;/h1&gt;
 &lt;p&gt;먼저 카카오채널에 스킬을 정의하고, 카카오채널의 메인에서 접근할 수 있도록 메뉴를 설정해주었다.&lt;/p&gt;
@@ -449,8 +512,7 @@
 &lt;p&gt;이제 챗봇에서 응답을 확인해보면 정상적으로 답변을 해주고 있음을 확인할 수 있다. &lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/6f94927436d8efb4c0870942de173df4/result.gif&quot; alt=&quot;result&quot;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;사용된 library에 대한 example, 사용법은 다른 페이지에서 다루고자 한다.&lt;/li&gt;
-&lt;li&gt;ColdStart 대응: TBA&lt;/li&gt;
+&lt;li&gt;사용된 library에 대한 example, 사용법은 다른 포스팅에서 다루고자 한다.&lt;/li&gt;
 &lt;/ul&gt;</content:encoded></item><item><title><![CDATA[스누푸파 카카오채널 (1) Puppeteer로 인스타 크롤링하기]]></title><description><![CDATA[스누푸파 카카오 채널 리뉴얼! puppeteer를 이용해 인스타그램을 크롤링 했습니다]]></description><link>https://distrue.github.io/posts/snuff_channel_1</link><guid isPermaLink="false">https://distrue.github.io/posts/snuff_channel_1</guid><pubDate>Tue, 16 Mar 2021 22:00:37 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 898px; &quot;
@@ -492,14 +554,16 @@
       &lt;/picture&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;h1 id=&quot;1-puppeteer로-스누푸파-페이지-크롤링&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-puppeteer%EB%A1%9C-%EC%8A%A4%EB%88%84%ED%91%B8%ED%8C%8C-%ED%8E%98%EC%9D%B4%EC%A7%80-%ED%81%AC%EB%A1%A4%EB%A7%81&quot; aria-label=&quot;1 puppeteer로 스누푸파 페이지 크롤링 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. Puppeteer로 스누푸파 페이지 크롤링&lt;/h1&gt;
+&lt;p&gt;서울대학교 주변의 맛집을 소개하는 인스타그램 인플루언서 스누푸파의 콘텐츠를 카카오톡 채널로 만들고 싶다는 문의를 받아
+카카오톡 채널을 개설하였다. 먼저 1) 인스타그램에 있는 모든 게시물들을 긁어오고, 2) 긁어온 데이터로 카카오톡 채널에서
+이미지 / 주소 / 링크를 제공해주는 방식으로 구성하였다.&lt;/p&gt;
 &lt;p&gt;Puppeteer는 google chrome을 control 할수 있는 nodeJS 기반의 라이브러리다.
 기존에는 crawling을 위해 Selenium을 많이 활용하는데, Puppeteer는 selenium 보다 직관적인 문법과
 중간 driver를 거치지 않아 빠른 동작이 가능한 장점이 있다. (&lt;a href=&quot;https://github.com/puppeteer/puppeteer&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;puppeteer link&lt;/a&gt;)&lt;/p&gt;
 &lt;p&gt;puppeteer를 통해 &lt;a href=&quot;https://instagram.com/snu_foodfighter&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;스누푸파&lt;/a&gt;의 페이지를 크롤링해 각 리뷰와 사진을 추출할 수 있도록 하였다.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/distrue/snuff_macro&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;github link&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;실제 개발하면서 다음과 같은 어려움을 겪었었다.&lt;/p&gt;
-&lt;h3 id=&quot;http-429-too-much-requests&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#http-429-too-much-requests&quot; aria-label=&quot;http 429 too much requests permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;HTTP 429 (Too much requests)&lt;/h3&gt;
+&lt;p&gt;크롤링을 해오면서 다음과 같은 어려움을 겪었었다.&lt;/p&gt;
+&lt;h3 id=&quot;1-http-429-too-much-requests&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-http-429-too-much-requests&quot; aria-label=&quot;1 http 429 too much requests permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. HTTP 429 (Too much requests)&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Instagram 에서는 특정 유저가 반복적인 이미지를 로드하는 행동을 반복하는 경우 봇이나 악의적 유저로 판단하고 page의 content를 로드하지 못하도록 이미지 / 콘텐츠 요청에 대해 &lt;code class=&quot;language-text&quot;&gt;429&lt;/code&gt; response를 반환한다. &lt;/li&gt;
 &lt;li&gt;
@@ -511,7 +575,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&quot;댓글에서-태그-가져오기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%8C%93%EA%B8%80%EC%97%90%EC%84%9C-%ED%83%9C%EA%B7%B8-%EA%B0%80%EC%A0%B8%EC%98%A4%EA%B8%B0&quot; aria-label=&quot;댓글에서 태그 가져오기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;댓글에서 태그 가져오기&lt;/h3&gt;
+&lt;h3 id=&quot;2-댓글에서-태그-가져오기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-%EB%8C%93%EA%B8%80%EC%97%90%EC%84%9C-%ED%83%9C%EA%B7%B8-%EA%B0%80%EC%A0%B8%EC%98%A4%EA%B8%B0&quot; aria-label=&quot;2 댓글에서 태그 가져오기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. 댓글에서 태그 가져오기&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;스누푸파는 게시물에 대한 태그를 본문이 아닌 댓글에 숨겨 두었다. 크게 2가지 case로 나뉘게 된다.&lt;/p&gt;
@@ -522,77 +586,4 @@
 &lt;/li&gt;
 &lt;li&gt;두가지 경우에 대해 대응할 수 있도록 최상위 댓글까지 접근한 후, &lt;code class=&quot;language-text&quot;&gt;snu_foodfighter&lt;/code&gt; 이름을 가진 댓글의 답글을 확인해 긁어 오도록 했다. &lt;/li&gt;
 &lt;li&gt;단, 이벤트 게시물의 경우 댓글이 너무 많이 써있는 경우가 있는데, 이 경우들은 댓글 로드가 150개 이상인 경우 이벤트 게시물로 간주하고 넘어가도록 설정하였다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&quot;2-mongodb에-크롤링-데이터-업로드&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-mongodb%EC%97%90-%ED%81%AC%EB%A1%A4%EB%A7%81-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%97%85%EB%A1%9C%EB%93%9C&quot; aria-label=&quot;2 mongodb에 크롤링 데이터 업로드 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. MongoDB에 크롤링 데이터 업로드&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;크롤링 데이터는 csv로 추출하였고, 추출된 데이터를 mongoDB에 업로드해 이후 개발할 lambda에서 데이터를 긁어 올 수 있도록 하였다.&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[토이 프로젝트의 DB 선택(RDB, DocumentDB)]]></title><description><![CDATA[RDB와 DocumentDB의 비교와 실제 선정할 때 고려할 요인들을 정리해 보았습니다]]></description><link>https://distrue.github.io/posts/toy-project-database</link><guid isPermaLink="false">https://distrue.github.io/posts/toy-project-database</guid><pubDate>Fri, 17 Jul 2020 22:00:37 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 898px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/81e5cf21d3aa22021bb02c7f1c254145/84cc5/200717.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 66.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAACRElEQVQ4y4WS628SQRTF+QP97gfjBxtrbFI1Eotai7b4KqWFpSyPaKKSWl5bQGuUSExJG6sJQaE8lE0To60SQBGBgiC7e9yZhYVGGie5mcxk9zfnnns0hu3rsL+9DW9iEY8TJloPtu9iJb4Af9oMX2qJln/HrBY5B3Ys8KZM4NIMivXPIEuSJGh0W1cx9+IaXC8NMK/rYX1+A6bQDJyvboLLWP4BqrCkAis19nowke6aoHzJpS3qx2QnoEB6cO5D+zAPhVll2D6FiKJA1VHgqJ+8yUH5kj2F8gMKbAGBFINyDyZBUaa2TGCrsm9chkHw4zLWclZawQ9WhPM2hOQ7LsvAI3vsTS0inLOjIVYooPOng263KyscQDVh3oYr9nGcN57E3KNJGNzncMdzEVPWMVxmT2PaeQZnZ49jankMJ7TH8Doew2ZsC9lcFm63Gw6HAyzLguf5noeyknmfFvp7E5h9OAn9/QkKnfdrcYk5hVsrFzDtGofRq0NwPYCve9+wEduggHg8jkgkgmg0ikKhMPCQtERaI/Dhlp/wLLicGeu8E9V2Ef9bqod0GMmlQ4Pxp2Rv3xuxlrbhx4HyuiB06U/Es/5OShBE9U4zHNjhnJFpBjMsKk1FmSgJqgolIhI5qHFRh3IULHQEjKx6q41aezDZzXd5zDifoVKtDYD9PK4mjTLMjp+t0khYqdbEfqWOYmEX7V9KFpP5L9AxHKq1xmGFJGdPc66RsD7wU7mKN7sFHBQzEEoJCJ0mfreaKJW/o95s4y8HT2DYy2c91gAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;picture&gt;
-        &lt;source
-          srcset=&quot;/static/81e5cf21d3aa22021bb02c7f1c254145/8ac56/200717.webp 240w,
-/static/81e5cf21d3aa22021bb02c7f1c254145/d3be9/200717.webp 480w,
-/static/81e5cf21d3aa22021bb02c7f1c254145/005c4/200717.webp 898w&quot;
-          sizes=&quot;(max-width: 898px) 100vw, 898px&quot;
-          type=&quot;image/webp&quot;
-        /&gt;
-        &lt;source
-          srcset=&quot;/static/81e5cf21d3aa22021bb02c7f1c254145/8ff5a/200717.png 240w,
-/static/81e5cf21d3aa22021bb02c7f1c254145/e85cb/200717.png 480w,
-/static/81e5cf21d3aa22021bb02c7f1c254145/84cc5/200717.png 898w&quot;
-          sizes=&quot;(max-width: 898px) 100vw, 898px&quot;
-          type=&quot;image/png&quot;
-        /&gt;
-        &lt;img
-          class=&quot;gatsby-resp-image-image&quot;
-          src=&quot;/static/81e5cf21d3aa22021bb02c7f1c254145/84cc5/200717.png&quot;
-          alt=&quot;img&quot;
-          title=&quot;img&quot;
-          loading=&quot;lazy&quot;
-          style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        /&gt;
-      &lt;/picture&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;RDB는 관계형 데이터 모델에 기초를 둔 데이터베이스이다. 관계형 데이터 모델은 모든 데이터를 2차원 형태의 테이블로 표현해 처리한다. 각 표현개체에 따라 데이터 간의 상관관계에서 개체간의 관계를 표현한 것이다. 각 Table을 schema를 통해 정의하고, SQL 질의문을 통해 데이터를 처리한다.&lt;/p&gt;
-&lt;h3 id=&quot;relational-db--nosql&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#relational-db--nosql&quot; aria-label=&quot;relational db  nosql permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Relational DB &amp;#x26; NoSQL&lt;/h3&gt;
-&lt;p&gt;최근 대부분의 DB들은 크게 RDB(Relational DB)와 NoSQL(Not only SQL) 분류로 구분된다.&lt;/p&gt;
-&lt;p&gt;NoSQL은 기존 관계형 DBMS가 갖고 있는 특성 외에 부가적인 특성을 지원하는 DB를 말한다. 우리에게 가장 익숙한 NoSQL은 DocumentDB(MongoDB가 대표적)과 Key-Value(Redis) 방식 등이 있다. 그 중에서도 이번에는 RDB와 DocumentDB에 대해 자세히 살펴보고자 한다.&lt;/p&gt;
-&lt;h3 id=&quot;rdb-vs-documentdb-각각-언제-써야-할까&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#rdb-vs-documentdb-%EA%B0%81%EA%B0%81-%EC%96%B8%EC%A0%9C-%EC%8D%A8%EC%95%BC-%ED%95%A0%EA%B9%8C&quot; aria-label=&quot;rdb vs documentdb 각각 언제 써야 할까 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;RDB vs DocumentDB, 각각 언제 써야 할까?&lt;/h3&gt;
-&lt;p&gt;보통 토이 프로젝트를 처음 시작할 때 RDB, DocumentDB 중 하나를 골라 프로젝트를 진행한다. 이전에 프로젝트를 작업할 때도 DoucmentDB (대부분 MongoDB)가 RDB보다 적용이 쉽다고 생각해 큰 고민 없이 선택했는데, 새로 프로젝트를 진행하면서 어떤 DB를 쓸지 고민하던 차 각각 언제 사용이 적합한지 알아보고자 한다.&lt;/p&gt;
-&lt;p&gt;DocumentDB은 다음과 같은 특징을 장점으로 보인다.&lt;/p&gt;
-&lt;p&gt;스키마없음: Schema를 사용하지 않음, 정형 데이터가 아닌 비정형 데이터 처리가 용이함
-관계 없음: 관계형 모델을 사용하지 않음, 테이블 간의 Join 없음 (populate, aggregate 등을 활용)
-RDB는 scale-up만 가능, NoSQL은 scale-up/scale-out이 둘 다 가능함&lt;/p&gt;
-&lt;p&gt;RDB는 master-slave 모델을 통해 해결함
-데이터에 직접 접근하기 때문에 Read-Write의 일반적 동작의 Performance가 RDB보다 빠름
-JSON 형태의 직관적인 형태로 개발이 편리
-그러나, 각 장점은 상응하는 단점을 갖는다.&lt;/p&gt;
-&lt;p&gt;고정된 스키마가 없다는 것은 데이터의 무결성, 정합성이 보장되지 않는다는 것임. 따라서 데이터를 처리할 때 정형 처리가 아닌 반정형/비정형 처리를 해야하며, 처리 시 문제가 발생하지 않도록 적절히 스키마를 설계해야 함 (고정된 스키마가 없는 것이지, 스키마 자체가 없는 것은 아님)
-관계가 없기 때문에 데이터 update 시 중복되는 데이터를 찾아 같이 수정해주어야 함. JOIN 명령이 없다는 점에서도 JOIN을 사용할 필요가 없도록 기존 RDB와는 다른 방식으로 Document를 정의해야 함.
-Scale-out이 되는 것은 분산환경에 도움이 됨, 그러나 RDB도 클라우드 환경으로 이동하며 확장에 용이해졌음.
-빠른 처리, 대용량 처리에는 용이하나, 배포되는 환경에서의 제약을 고려해야 한다. Document DB의 경우 insert/read 형식에는 유리하나 update의 불편함이 있다
-새로운 저장방식을 이용해 데이터를 write할 때 논리적으로 memory 공간에 임시로 쓰고, 일정 주기마다 이를 disk로 옮기는 방식을 씀, 따라서 메모리 크기가 DB 성능에 영향을 미치게 됨
-위와 같은 차이점에 따라, DocumentDB가 적합한 경우를 각각 나누었다. (RDB는 그 반대)&lt;/p&gt;
-&lt;h3 id=&quot;documentdb가-적합한-경우&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#documentdb%EA%B0%80-%EC%A0%81%ED%95%A9%ED%95%9C-%EA%B2%BD%EC%9A%B0&quot; aria-label=&quot;documentdb가 적합한 경우 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;DocumentDB가 적합한 경우&lt;/h3&gt;
-&lt;p&gt;Insert하고 Update나 Delete가 잦지 않은 환경 (로그, 세션 등)
-트렌섹션의 무결성/정합성이 강조되지 않는 환경 (금융 처리 등)
-비정형 데이터의 중요성이 강조될 때 (변경이 잦거나, 커뮤니티, SNS등 테이블을 나누면 transaction 고통이 많을 때)&lt;/p&gt;
-&lt;h3 id=&quot;잘못된-db-선택-방법&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%9E%98%EB%AA%BB%EB%90%9C-db-%EC%84%A0%ED%83%9D-%EB%B0%A9%EB%B2%95&quot; aria-label=&quot;잘못된 db 선택 방법 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;잘못된 DB 선택 방법&lt;/h3&gt;
-&lt;p&gt;대용량 처리나 속도를 생각해서: 다른 해결책들이 충분히 많기도 하고, 컴퓨팅 환경 제한도 더욱 나아지고 있기 때문에 눈에 띄는 차이를 경험하지는 않는다.
-스키마 변경이 쉬우니까: DocumentDB는 JOIN이 없는 만큼 복잡한 형태의 Transaction이 적용되는 경우 schema 설계가 어렵다. 대충 짠 schema는 나중에 query 작성 때 큰 어려움을 가져온다…&lt;/p&gt;
-&lt;h3 id=&quot;추가로-고려해볼-사항&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%B6%94%EA%B0%80%EB%A1%9C-%EA%B3%A0%EB%A0%A4%ED%95%B4%EB%B3%BC-%EC%82%AC%ED%95%AD&quot; aria-label=&quot;추가로 고려해볼 사항 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;추가로 고려해볼 사항&lt;/h3&gt;
-&lt;p&gt;배포 환경: 특히 클라우드에 서비스를 배포하는 경우에는 비용적인 측면으로 보면 오히려 serverless DB가 잘 구성되어 있는 RDB가 더 합리적일 수 있다.&lt;/p&gt;</content:encoded></item></channel></rss>
+&lt;/ul&gt;</content:encoded></item></channel></rss>
