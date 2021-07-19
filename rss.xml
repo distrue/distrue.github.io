@@ -1,4 +1,76 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Max Jung (distrue)]]></title><description><![CDATA[Max의 기술 블로그]]></description><link>https://distrue.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 18 Jul 2021 06:41:37 GMT</lastBuildDate><item><title><![CDATA[Docker Essentials]]></title><description><![CDATA[docker의 기본적인 명령어 정리, docker image를 amazon ECR에 배포하기]]></description><link>https://distrue.github.io/posts/docker_1</link><guid isPermaLink="false">https://distrue.github.io/posts/docker_1</guid><pubDate>Sun, 20 Jun 2021 23:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Max Jung (distrue)]]></title><description><![CDATA[Max의 기술 블로그]]></description><link>https://distrue.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 19 Jul 2021 23:38:52 GMT</lastBuildDate><item><title><![CDATA[JNI in Action (Java ↔️ c++)]]></title><description><![CDATA[JNI를 활용해 java runtime 위에 c++ extension을 연결하기]]></description><link>https://distrue.github.io/posts/jni_in_action</link><guid isPermaLink="false">https://distrue.github.io/posts/jni_in_action</guid><pubDate>Sun, 18 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 946px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/66256a7277dbea8793d6f64081ced4ee/36c33/jni%2B1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 66.25%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAABrklEQVQ4y6VTTU/CQBAl/gn/hjcTD/4zExPPeDTxYox8XEyMRgkWFfUCRI2IhIQKZVtohVL5LILQLk92ixW0MUYnmezO7Mzre7tTH2ZsPB67q+PTPctRez43Uztrvp8BKY9pg8BW09Mz+h9Ah11VKUAnOQxtzvXvgMwsmyKjdpF97mL0H0DbtsEEW6aBl7tD1B8EjDo6Z8zOfgXoVQDaB7R7oEMm6K8/134FpNR5BFmW4ff7EQoGETs7R06UEN4/QPzqGoFAANFoFJqmeTP0ujdWHIvFkEgkuMukhPjFBVKpFCKRCARBQK1W+9bH1jnAD4blchmmaaJYLEJVVeTzeb4Xn54gSRIIIfzc6WMzSl1QnxdtwzDQarWgV6vQKhX+AeakWEJNe4ZSImg2mw7g5IFm79RHp2B1w8RbbzAHLCoV5CTixqSn4/jmGnU4j8P00E4DlpjGuP0yf4frW0E87oXc5t2jEywsrWBje8fNrZ0eY3F1GedSgceMm5U8xTC8yceJ6eeSR5PhvZRuUSpkgKl6UVaQzGTxOvhkTVo9hLMPqJh9RyJzsz35NXVX8jvUCuAC8cPVEQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+        &lt;source
+          srcset=&quot;/static/66256a7277dbea8793d6f64081ced4ee/8ac56/jni%2B1.webp 240w,
+/static/66256a7277dbea8793d6f64081ced4ee/d3be9/jni%2B1.webp 480w,
+/static/66256a7277dbea8793d6f64081ced4ee/30833/jni%2B1.webp 946w&quot;
+          sizes=&quot;(max-width: 946px) 100vw, 946px&quot;
+          type=&quot;image/webp&quot;
+        /&gt;
+        &lt;source
+          srcset=&quot;/static/66256a7277dbea8793d6f64081ced4ee/8ff5a/jni%2B1.png 240w,
+/static/66256a7277dbea8793d6f64081ced4ee/e85cb/jni%2B1.png 480w,
+/static/66256a7277dbea8793d6f64081ced4ee/36c33/jni%2B1.png 946w&quot;
+          sizes=&quot;(max-width: 946px) 100vw, 946px&quot;
+          type=&quot;image/png&quot;
+        /&gt;
+        &lt;img
+          class=&quot;gatsby-resp-image-image&quot;
+          src=&quot;/static/66256a7277dbea8793d6f64081ced4ee/36c33/jni%2B1.png&quot;
+          alt=&quot;img&quot;
+          title=&quot;img&quot;
+          loading=&quot;lazy&quot;
+          style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        /&gt;
+      &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;JNI (Java Native Interface)를 통해 Java runtime 위에서 C++ extension을 실행했다.&lt;/p&gt;
+&lt;h3 id=&quot;motivation&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#motivation&quot; aria-label=&quot;motivation permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Motivation&lt;/h3&gt;
+&lt;p&gt;기존의 Java runtime에 만족하지 못하고 C++ extension을 붙인 이유는 다음과 같다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Java POJO는 무겁다
+Java의 &lt;code class=&quot;language-text&quot;&gt;Map&lt;/code&gt;과 같은 원시 타입이 아닌 Object들의 POJO는 기본적으로 internal에서 차지하는 memory 양이 꽤 된다. 기본적인 Map도 110byte를 넘는 수준이다. Memory 압박이 없는 경우는 상관이 없지만, memory를 최대 효율로 사용하려는 경우에는 생각보다 많은 손해를 보게 된다. Java의 편한 interface에서의 코딩을 포기하고 C++ extension을 사용해 조금 더 메모리를 절약해보는 시도를 해보기로 했다.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Java Memory 절약을 위해 사용되는 방법들의 속도 저하
+물론 1. 의 결정을 내리기 전에 Java 안에서 문제 해결을 시도해 봐야 할 것이다. 아래와 같은 방법들을 시도해 볼 수 있다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Java Serialization: Java 안의 직렬화 interface &lt;code class=&quot;language-text&quot;&gt;Serializable&lt;/code&gt;을 implement 하는 class를 만들고, 이를 &lt;code class=&quot;language-text&quot;&gt;byte[]&lt;/code&gt; 로 바꿔 저장할 수 있다. 그러나 이는 Java POJO에 들어있는 메타데이터들도 모두 그대로 바꾸는 것이기 때문에 memory 절약에서 큰 효과를 거둘 수 없다.&lt;/li&gt;
+&lt;li&gt;3rd-party library 사용: google의 &lt;a href=&quot;https://google.github.io/flatbuffers/index.html&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;flatBuffer&lt;/a&gt; 와 같이 별도의 직렬화 스펙을 활용해 데이터를 &lt;code class=&quot;language-text&quot;&gt;byte[]&lt;/code&gt; 로 저장할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;후자의 방법은 생각보다 높은 performance를 얻를 수 있는데, 여기에도 한계점은 존재한다. 데이터를 &lt;code class=&quot;language-text&quot;&gt;byte[]&lt;/code&gt; 로 직렬화해 사용하기 때문에 &lt;code class=&quot;language-text&quot;&gt;write&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;read&lt;/code&gt; 할 때마다 ser/deserialize 를 수행해야 한다는 점이다. 이 부분은 생각보다 큰 overhead로 작용하게 된다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt; 위의 2가지 문제를 해결하기 위해서는 1&gt; Java POJO와 같이 메타 데이터는 저장하지 않으면서, 2&gt; 빠른 access를 위해 직렬화가 아닌 구조화된 형식으로 데이터를 저장하고 있어야 한다는 점이다. 이를 해결하기 위해 JNI을 선택하게 되었다.&lt;/p&gt;
+&lt;h3 id=&quot;objective&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#objective&quot; aria-label=&quot;objective permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Objective&lt;/h3&gt;
+&lt;p&gt;JNI를 통한 방법이 기존의 방법보다 높은 효율을 달성하기 위해서는 다음을 만족해야 한다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;높은 메모리 효율&lt;/li&gt;
+&lt;li&gt;빠른 Data Access&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;이를 만족하는지 POC 하는 과정을 이후 기록해둘 것이다.&lt;/p&gt;
+&lt;h3 id=&quot;1-jni-project-setting&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-jni-project-setting&quot; aria-label=&quot;1 jni project setting permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. JNI Project Setting&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;i&gt;여튼 그래서 이 포스트의 시작은 여기부터…&lt;/i&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Gradle, cmake를 활용해 C++ extension을 빌드하고 실행해볼 수 있도록 했다.
+구체적인 방식은 Gradle 위에서 shell script를 실행하는 방식으로 구성했다.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/distrue/JNI-in-action&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;&lt;img src=&quot;https://opengraph.githubassets.com/2ae3dcf1fa2b05a8108b19d782c9bd3809444b5c22b84e725560f17f2d3add80/distrue/JNI-in-action&quot; alt=&quot;img&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;우선은 깃헙 링크에서,,, 글로 자세한 내용도 update 예정 😎&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Docker Essentials]]></title><description><![CDATA[docker의 기본적인 명령어 정리, docker image를 amazon ECR에 배포하기]]></description><link>https://distrue.github.io/posts/docker_1</link><guid isPermaLink="false">https://distrue.github.io/posts/docker_1</guid><pubDate>Sun, 20 Jun 2021 23:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 960px; &quot;
     &gt;

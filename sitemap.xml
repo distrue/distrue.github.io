@@ -2,14 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 <url> <loc>https://distrue.github.io/tags</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://distrue.github.io/categories</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://distrue.github.io/posts/docker_1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://distrue.github.io/posts/jni_in_action</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://distrue.github.io/posts/snuff_channel_1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://distrue.github.io/pages/about/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://distrue.github.io/posts/snuff_channel_2</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://distrue.github.io/posts/snuff_channel_1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://distrue.github.io/posts/docker_1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://distrue.github.io/tag/java</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://distrue.github.io/tag/amazon-ecr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://distrue.github.io/tag/c</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://distrue.github.io/tag/chatbot</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://distrue.github.io/tag/cmake</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://distrue.github.io/tag/docker</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://distrue.github.io/tag/gradle</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://distrue.github.io/tag/kakao-channel</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://distrue.github.io/category/jni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://distrue.github.io/category/docker</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://distrue.github.io/category/스누푸파</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://distrue.github.io/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
