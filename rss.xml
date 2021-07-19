@@ -1,36 +1,38 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Max Jung (distrue)]]></title><description><![CDATA[Max의 기술 블로그]]></description><link>https://distrue.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 20 Jun 2021 14:56:02 GMT</lastBuildDate><item><title><![CDATA[Docker Essentials]]></title><description><![CDATA[docker의 기본적인 명령어 정리, docker image를 amazon ECR에 배포하기]]></description><link>https://distrue.github.io/posts/docker_2</link><guid isPermaLink="false">https://distrue.github.io/posts/docker_2</guid><pubDate>Sun, 20 Jun 2021 23:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Max Jung (distrue)]]></title><description><![CDATA[Max의 기술 블로그]]></description><link>https://distrue.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 18 Jul 2021 06:41:37 GMT</lastBuildDate><item><title><![CDATA[Docker Essentials]]></title><description><![CDATA[docker의 기본적인 명령어 정리, docker image를 amazon ECR에 배포하기]]></description><link>https://distrue.github.io/posts/docker_1</link><guid isPermaLink="false">https://distrue.github.io/posts/docker_1</guid><pubDate>Sun, 20 Jun 2021 23:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 960px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/05d5db197d1149b7eab387b1b504de29/37523/docker.png&quot;
+    href=&quot;/static/581f1ab869f8381570f595a32d9640c1/1843f/docker_essential.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 66.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAIAAAAmMtkJAAAACXBIWXMAAAR2AAAEdgG9ParHAAABuUlEQVQoz2NgmPoAiBinPmCe9oBlOggxTXsAESSMIBRIw8T7DBPuMfTfY5hMtH6ItYyTH7huetFx9kPF8XdyC58wTLrPOA3qIqBBQMQIIdE0g/iT70+59On///+///4Dgk+//tmtfwF0CEgbUHbSfZBZU+6DnDYZzeb+e96bXwJ1Xn311X3xtdr9jy+9+nbh9U+gHMeMh7G7X/ttfeWx+WXy3jcRO1+brX4O9SNUc9+9znMfgZpLD75i6LsvPPPR5tsgrsaypwxTHtitf+608YXf1pdem1/G7XmtsfQpUD0j3H6GXqjmS88/r77xYee9T39+//7044/qEpDmkB2vdZY/M139zGTVc+eNLxzWv4jY+Up3xVOgT0H+BYaw88ZXN19+XHH2wb4bzxefvL//xrOdD78CdbLPeBi163Xi3jflx99lHnybsu9N/uF3lcffu29+CZQFaWYER1Luobdffv0Bhtb////OvPwBct4kUIBBQgsUVBA0CTXYQAEwFaQf6Mm4PW98t77in/UQHlWQeGIGIzibcRpqPDODLHkASiQT7jNBuEQlkikPIIgRZgNIdApxSHTuI7IRAPXxt5oFQ5yaAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 66.25%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAACJ0lEQVQ4y41TXUgUURSetsKKoBIrKyGiXkJZ+oF+SIjopbceexd8EYKCqB6KEF8kKPMnK1pTszINRaIHQQzESN1gi6KXlb3b7szs7G7756K5WNPXOXd3phlLcOBwzrn33O98Z845inL/G6R0hKVes8xftVB82QPSlsNAnk6y28PSX9v5b6L/iZ3YBiTDwwdtdHFPYPOjSDHwrnBll/eWtDrs5QwlWKvAvqcqBmbnoc2b+JJeQsNEqvigxP7MiIEDzzTsfBLF0cEYdnerqCRbcTAtMqQSK7qiEHM/wd8nPYdkflHaV99noLQIrKPy68a/4/JkGvVvU7hE+tZMFudex2VVsgIb8E4I1+ghf81TCShNAXi7guj7nEK2YGLL44gMrn6hYzsl3kGsWDPbvb2qZMo+E9tgAfq+5iVgx8csjg0mcP5NCrnCL5i/AW+/LktnVhcn0rjyLiP1dSLBLG8HcrgwmpRMNz4sATZ+yGFhYRF+kYQ/nMRUKIGgkYGaX7KzV3ZHJZs9PSrKfVFsI9lV8rdyFe1WyW0CVb0axkNpzMzGME1gk0EDARHHjemM7PYm6vzB5xpqiO2pIQP7+zQcfxXD4Zc6TpI+RJqb+7fLRLe6P4YxrQDjhwmRN3HTP2fPJDfl9LCBsyNxnCCAIwM6agmYz9hnmxO655BGh4HLfRGs56GmX+EcWo7xOIfZeufwXZtiB6+wKdYj10o6fRfgSrvsBFvlLv8B/QW8mDK8EtAAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;picture&gt;
         &lt;source
-          srcset=&quot;/static/05d5db197d1149b7eab387b1b504de29/8ac56/docker.webp 240w,
-/static/05d5db197d1149b7eab387b1b504de29/d3be9/docker.webp 480w,
-/static/05d5db197d1149b7eab387b1b504de29/bc514/docker.webp 720w&quot;
-          sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+          srcset=&quot;/static/581f1ab869f8381570f595a32d9640c1/8ac56/docker_essential.webp 240w,
+/static/581f1ab869f8381570f595a32d9640c1/d3be9/docker_essential.webp 480w,
+/static/581f1ab869f8381570f595a32d9640c1/e46b2/docker_essential.webp 960w,
+/static/581f1ab869f8381570f595a32d9640c1/f52fe/docker_essential.webp 1186w&quot;
+          sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
           type=&quot;image/webp&quot;
         /&gt;
         &lt;source
-          srcset=&quot;/static/05d5db197d1149b7eab387b1b504de29/8ff5a/docker.png 240w,
-/static/05d5db197d1149b7eab387b1b504de29/e85cb/docker.png 480w,
-/static/05d5db197d1149b7eab387b1b504de29/37523/docker.png 720w&quot;
-          sizes=&quot;(max-width: 720px) 100vw, 720px&quot;
+          srcset=&quot;/static/581f1ab869f8381570f595a32d9640c1/8ff5a/docker_essential.png 240w,
+/static/581f1ab869f8381570f595a32d9640c1/e85cb/docker_essential.png 480w,
+/static/581f1ab869f8381570f595a32d9640c1/d9199/docker_essential.png 960w,
+/static/581f1ab869f8381570f595a32d9640c1/1843f/docker_essential.png 1186w&quot;
+          sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
           type=&quot;image/png&quot;
         /&gt;
         &lt;img
           class=&quot;gatsby-resp-image-image&quot;
-          src=&quot;/static/05d5db197d1149b7eab387b1b504de29/37523/docker.png&quot;
+          src=&quot;/static/581f1ab869f8381570f595a32d9640c1/d9199/docker_essential.png&quot;
           alt=&quot;img&quot;
           title=&quot;img&quot;
           loading=&quot;lazy&quot;
